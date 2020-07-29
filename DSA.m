@@ -1,7 +1,7 @@
 clc
 clear 
-tt1=fastaread('D:\qiaohuijuan\test\enhancer\independent\independent dataset\enhancers.txt');
-tt2=fastaread('D:\qiaohuijuan\test\enhancer\independent\independent dataset\nonhancers.txt');
+tt1=fastaread('.txt');
+tt2=fastaread('.txt');
 tt=[tt1;tt2];
 G=10;
 n=length(tt);
@@ -11,7 +11,7 @@ for i=1:n
     SSS{1,i}=tt(i).Sequence;
     Seq=SSS{1,i};
     
-    %生成DNA样本的特征向量 
+    % 鐞嗗寲鎬ц川
     value_na = cell(1,16);
     value_na{1} = 'AA'; value_na{2} = 'TC'; value_na{3} = 'AG'; value_na{4} = 'AT';
     value_na{5} = 'CA'; value_na{6} = 'CC'; value_na{7} = 'CG'; value_na{8} = 'CT';
@@ -60,4 +60,4 @@ for i=1:n
     end
     feature2(i,:) = M(:)';
 end
-csvwrite('D:\qiaohuijuan\test\enhancer\independent\features\DSA360.csv',feature2);
+csvwrite('.csv',feature2);
